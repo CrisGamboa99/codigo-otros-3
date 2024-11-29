@@ -8,9 +8,12 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
+/* Se cambia getElementsByName a getElementById, ya que se esta obteniendo el elemento por el id que tiene */
+const li = document.getElementById("lista-de-productos")
 const $i = document.querySelector('.input');
 
+/* La función displayProductos no estaba definida, se crea y se añade dentro el contenido del for */
+function displayProductos(){
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
   d.classList.add("producto")
@@ -26,6 +29,7 @@ for (let i = 0; i < productos.length; i++) {
   d.appendChild(imagen)
 
   li.appendChild(d)
+}
 }
 
 displayProductos(productos)
